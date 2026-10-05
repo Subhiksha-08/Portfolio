@@ -1,0 +1,130 @@
+.about-split-layout {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 64px;
+  align-items: start;
+}
+
+.about-bio-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.bio-lead-text {
+  font-family: var(--font-heading);
+  font-size: 1.8rem;
+  font-weight: 700;
+  line-height: 1.35;
+  color: var(--text-primary);
+  margin-bottom: 24px;
+}
+
+.bio-paragraph {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: var(--text-secondary);
+  margin-bottom: 20px;
+}
+
+.bio-paragraph strong {
+  color: var(--accent);
+}
+
+.about-edu-col {
+  display: flex;
+  flex-direction: column;
+  padding-left: 20px;
+}
+
+.edu-schematic-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-accent);
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--accent);
+  letter-spacing: 0.15em;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border-subtle);
+  margin-bottom: 24px;
+}
+
+.edu-header-icon {
+  width: 16px;
+  height: 16px;
+}
+
+.edu-wireframe-list {
+  position: relative;
+  border-left: 1px solid var(--border-subtle);
+  padding-left: 28px;
+}
+
+.edu-wire-item {
+  position: relative;
+  padding-bottom: 40px;
+}
+
+.edu-wire-item:last-child {
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.node-left-junction {
+  left: -32.5px; /* exactly centered on the 1px border */
+  top: 8px;
+}
+
+.edu-wire-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.edu-date {
+  font-family: var(--font-accent);
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--text-muted);
+}
+
+.edu-status {
+  font-family: var(--font-accent);
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--accent);
+}
+
+.edu-degree {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+}
+
+.edu-institution {
+  display: block;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  margin-bottom: 12px;
+}
+
+.edu-detail {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+}
+
+@media (max-width: 991px) {
+  .about-split-layout {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+  
+  .about-edu-col {
+    padding-left: 0;
+  }
+}

@@ -1,0 +1,159 @@
+.skills-schematic-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border-top: 1px solid var(--border-subtle);
+  border-left: 1px solid var(--border-subtle);
+  margin-top: 32px;
+  background-color: transparent;
+}
+
+.skills-schematic-cell {
+  padding: 44px 36px;
+  border-right: 1px solid var(--border-subtle);
+  border-bottom: 1px solid var(--border-subtle);
+  position: relative;
+  transition: background-color var(--transition-medium);
+}
+
+.skills-schematic-cell:hover {
+  background-color: rgba(20, 20, 18, 0.35);
+}
+
+/* Cell-specific corner nodes */
+.skills-schematic-cell .schematic-node {
+  opacity: 0.15;
+  transition: opacity var(--transition-fast), background-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.skills-schematic-cell:hover .schematic-node {
+  opacity: 1;
+  background-color: var(--accent-hover);
+  box-shadow: 0 0 8px rgba(209, 161, 83, 0.6);
+}
+
+/* Signal / Component text details */
+.cell-signal-tag {
+  font-family: var(--font-accent);
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  letter-spacing: 0.15em;
+  margin-bottom: 18px;
+}
+
+.skills-schematic-cell:hover .cell-signal-tag {
+  color: var(--accent);
+}
+
+.cell-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.cell-icon-terminal {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-subtle);
+  background-color: var(--bg-base);
+  color: var(--text-secondary);
+  position: relative;
+  transition: all var(--transition-fast);
+}
+
+.cell-icon {
+  width: 20px;
+  height: 20px;
+  z-index: 2;
+}
+
+.terminal-glow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--accent-muted);
+  opacity: 0;
+  border-radius: var(--radius-sm);
+  transition: opacity var(--transition-fast);
+  z-index: 1;
+}
+
+.skills-schematic-cell:hover .cell-icon-terminal {
+  border-color: var(--accent-border);
+  color: var(--accent);
+}
+
+.skills-schematic-cell:hover .terminal-glow {
+  opacity: 1;
+}
+
+.cell-header h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  letter-spacing: -0.01em;
+}
+
+/* Structured skill connection list */
+.cell-skills-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.cell-skills-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 0.95rem;
+  line-height: 1.4;
+  color: var(--text-secondary);
+}
+
+.bullet-node {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background-color: var(--text-muted);
+  flex-shrink: 0;
+  margin-top: 7px;
+  transition: all var(--transition-fast);
+}
+
+.skills-schematic-cell:hover .bullet-node {
+  background-color: var(--accent);
+  box-shadow: 0 0 6px rgba(209, 161, 83, 0.8);
+}
+
+.bullet-text {
+  transition: color var(--transition-fast);
+}
+
+.skills-schematic-cell:hover .bullet-text {
+  color: var(--text-primary);
+}
+
+@media (max-width: 991px) {
+  .skills-schematic-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 576px) {
+  .skills-schematic-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .skills-schematic-cell {
+    padding: 32px 24px;
+  }
+}
